@@ -17,11 +17,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] Buildings;
 
-
-
     int randNum;
-
-    int doRepeat = 1;
 
     int repeatAmount = 1;
 
@@ -45,22 +41,15 @@ public class GameManager : MonoBehaviour
         {
             //pick from random pool of objects
             randNum = Random.Range(1, 4);
-            //Debug.Log("Building = " + randNum);
 
+            //creat chosen objects
             Instantiate(Buildings[randNum], new Vector3(0, 0, repeatAmount * 5.5f), new Quaternion(0, 0, 0, 0));
 
-            doRepeat = Random.Range(0, 10);
             repeatAmount++;
-            /*
-            if (randNum == 4)
-            {
-                doRepeat = 0;
-            }
-            */
-                
-            Debug.Log("Repeat = " + doRepeat);
+
         }
-        while (doRepeat != 0);
+        //choose to contine building
+        while (randNum != 3);
     }
 
     
